@@ -1,0 +1,134 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".txt" #>
+<# 
+		string type = "Owner";
+		string nameSpace = "Carbase.Win";
+		string[] gridNames = new string[] {"Car|s"};
+#>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using BusinessLogix;
+using DevExpress.XtraEditors;
+using Linq;
+using Sommite.Controls.DX.Helpers;
+using Sommite.Frameworks.MVVM;
+
+namespace <#=nameSpace#>.Forms.Details
+{
+    public partial class <#=type#>Details : DevExpress.XtraEditors.XtraForm
+    {
+
+        public static new Type GetType()
+        {
+            return typeof(<#=type#>Details);
+        }
+
+        public event EventHandler Changed;
+
+        public void OnChanged(object sender,EventArgs e)
+        {
+            if (Changed != null)
+                Changed(this, e);
+        }
+
+        public <#=type#>Details()
+        {
+            InitializeComponent();
+			<#
+				foreach(string s in gridNames)
+            {#>
+
+			sbOK.Click += sbOK_Click;
+            sbCancel.Click += sbCancel_Click;
+
+            GridView.Initialize(ref gv<#=s.Replace("|","")#>);
+            GridView.Initialize(ref gv<#=s.Replace("|","")#>, GridViewPropertySet.ReadOnly);
+            GridView.Initialize(ref gv<#=s.Replace("|","")#>, GridViewPropertySet.NoFilter);
+            GridView.Initialize(ref gv<#=s.Replace("|","")#>, GridViewPropertySet.Minimalistic);
+            GridView.Initialize(ref gv<#=s.Replace("|","")#>, GridViewPropertySet.DoubleClick, Edit<#=s.Split('|')[0]#>);
+			
+			bbiAdd<#=s.Split('|')[0]#>.ItemClick += Add<#=s.Split('|')[0]#>;
+            bbiEdit<#=s.Split('|')[0]#>.ItemClick += Edit<#=s.Split('|')[0]#>;
+			bbiDelete<#=s.Split('|')[0]#>.ItemClick += Edit<#=s.Split('|')[0]#>;
+			<#} #>
+        }
+
+        private void DetailChanged(object sender, EventArgs e)
+        {
+            bindingProvider.Save();
+            BindData(((<#=type#>) bindingProvider.ViewModel));
+            OnChanged(this, EventArgs.Empty);
+        }
+
+		<#foreach(string s in gridNames){#>
+		
+		public void Add<#=s.Split('|')[0]#>(object sender, EventArgs e)
+        {
+            new DetailForm<<#=s.Split('|')[0]#>>(typeof(<#=s.Split('|')[0]#>Details), DetailChanged).Add(((<#=type#>)bindingProvider.ViewModel).Add<#=s.Split('|')[0]#>());
+        }
+
+		public void Edit<#=s.Split('|')[0]#>(object sender, EventArgs e)
+        {
+            new DetailForm<<#=s.Split('|')[0]#>>(typeof(<#=s.Split('|')[0]#>Details), DetailChanged).Edit(((<#=s.Split('|')[0]#>)gv<#=s.Replace("|","")#>.GetFocusedRow()).<#=s.Split('|')[0]#>);
+        }
+
+		public void Delete<#=s.Split('|')[0]#>(object sender, EventArgs e)
+		{
+		}
+
+		private List<GridColumn> <#=s.Replace("|","")#>GridColumns { get; set; }
+		<#}#>
+
+        private BindingProvider<<#=type#>> bindingProvider { get; set; }
+        
+        public void BindData(<#=type#> bindObject = null)
+        {
+            bindingProvider = new BindingProvider<<#=type#>>(bindObject, "ID", dbo.Connect);
+			<#foreach(string s in gridNames){#>
+            bindingProvider.GridBindings.Add(new GridBinding(GridColumnPaddingMode.Right) { Columns = <#=s.Replace("|","")#>GridColumns, GridControl = gc<#=s.Replace("|","")#> });
+			<#}#>
+            bindingProvider.PerformBinding(this, null, null,
+                bindObject.ID==0 ? "... toevoegen" : "Details van " + bindObject.Name);
+        }
+
+        public void Save()
+        {
+            bindingProvider.Save();
+            OnChanged(this,EventArgs.Empty);
+            bindingProvider.Release();
+            Application.DoEvents();
+            try
+            {
+                Close();
+            }
+            catch (Exception ex)
+            {
+                Hide();
+            }
+        }
+
+        private void sbOK_Click(object sender, EventArgs e)
+        {
+            Save();
+        }
+
+        private void sbCancel_Click(object sender, EventArgs e)
+        {
+            bindingProvider.Release();
+            Close();
+        }
+
+       
+    }
+}

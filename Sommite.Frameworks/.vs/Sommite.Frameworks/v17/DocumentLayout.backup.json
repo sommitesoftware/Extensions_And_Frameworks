@@ -1,0 +1,115 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Temp\\Sommite.Frameworks\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{42F04F69-63E7-48CE-A1DE-152D9D04147A}|Sommite.Frameworks.csproj|c:\\temp\\sommite.frameworks\\data\\gridview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42F04F69-63E7-48CE-A1DE-152D9D04147A}|Sommite.Frameworks.csproj|solutionrelative:data\\gridview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42F04F69-63E7-48CE-A1DE-152D9D04147A}|Sommite.Frameworks.csproj|C:\\Temp\\Sommite.Frameworks\\codefactory\\linqwebconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42F04F69-63E7-48CE-A1DE-152D9D04147A}|Sommite.Frameworks.csproj|solutionrelative:codefactory\\linqwebconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42F04F69-63E7-48CE-A1DE-152D9D04147A}|Sommite.Frameworks.csproj|C:\\Temp\\Sommite.Frameworks\\codefactory\\linqtableclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42F04F69-63E7-48CE-A1DE-152D9D04147A}|Sommite.Frameworks.csproj|solutionrelative:codefactory\\linqtableclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42F04F69-63E7-48CE-A1DE-152D9D04147A}|Sommite.Frameworks.csproj|C:\\Temp\\Sommite.Frameworks\\data\\connectionsview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42F04F69-63E7-48CE-A1DE-152D9D04147A}|Sommite.Frameworks.csproj|solutionrelative:data\\connectionsview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42F04F69-63E7-48CE-A1DE-152D9D04147A}|Sommite.Frameworks.csproj|C:\\Temp\\Sommite.Frameworks\\codefactory\\linqtablemvcapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42F04F69-63E7-48CE-A1DE-152D9D04147A}|Sommite.Frameworks.csproj|solutionrelative:codefactory\\linqtablemvcapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|Sommite.Frameworks||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GridView.cs",
+              "DocumentMoniker": "C:\\Temp\\Sommite.Frameworks\\Data\\GridView.cs",
+              "RelativeDocumentMoniker": "Data\\GridView.cs",
+              "ToolTip": "C:\\Temp\\Sommite.Frameworks\\Data\\GridView.cs",
+              "RelativeToolTip": "Data\\GridView.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T13:42:58.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LinqWebConnect.cs",
+              "DocumentMoniker": "C:\\Temp\\Sommite.Frameworks\\CodeFactory\\LinqWebConnect.cs",
+              "RelativeDocumentMoniker": "CodeFactory\\LinqWebConnect.cs",
+              "ToolTip": "C:\\Temp\\Sommite.Frameworks\\CodeFactory\\LinqWebConnect.cs",
+              "RelativeToolTip": "CodeFactory\\LinqWebConnect.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T13:42:52.898Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LinqTableClass.cs",
+              "DocumentMoniker": "C:\\Temp\\Sommite.Frameworks\\CodeFactory\\LinqTableClass.cs",
+              "RelativeDocumentMoniker": "CodeFactory\\LinqTableClass.cs",
+              "ToolTip": "C:\\Temp\\Sommite.Frameworks\\CodeFactory\\LinqTableClass.cs",
+              "RelativeToolTip": "CodeFactory\\LinqTableClass.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAowAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T13:42:45.611Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ConnectionsView.cs",
+              "DocumentMoniker": "C:\\Temp\\Sommite.Frameworks\\Data\\ConnectionsView.cs",
+              "RelativeDocumentMoniker": "Data\\ConnectionsView.cs",
+              "ToolTip": "C:\\Temp\\Sommite.Frameworks\\Data\\ConnectionsView.cs",
+              "RelativeToolTip": "Data\\ConnectionsView.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T13:40:57.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LinqTableMvcApi.cs",
+              "DocumentMoniker": "C:\\Temp\\Sommite.Frameworks\\CodeFactory\\LinqTableMvcApi.cs",
+              "RelativeDocumentMoniker": "CodeFactory\\LinqTableMvcApi.cs",
+              "ToolTip": "C:\\Temp\\Sommite.Frameworks\\CodeFactory\\LinqTableMvcApi.cs",
+              "RelativeToolTip": "CodeFactory\\LinqTableMvcApi.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T13:40:43.967Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Sommite.Frameworks",
+              "DocumentMoniker": "C:\\Temp\\Sommite.Frameworks\\Sommite.Frameworks.csproj",
+              "RelativeDocumentMoniker": "Sommite.Frameworks.csproj",
+              "ToolTip": "C:\\Temp\\Sommite.Frameworks\\Sommite.Frameworks.csproj*",
+              "RelativeToolTip": "Sommite.Frameworks.csproj*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-09T13:40:12.273Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

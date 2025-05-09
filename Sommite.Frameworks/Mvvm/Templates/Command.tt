@@ -1,0 +1,79 @@
+﻿<#@ Assembly Name="System.Core.dll" #>
+<#@ Assembly Name="System.Xml.dll" #>
+<#@ Assembly Name="System.Xml.Linq.dll" #>
+<#@ Assembly Name="System.Windows.Forms.dll" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Diagnostics" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Xml.Linq" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #> 
+<# 
+	string SampleInputFileContent 
+    =  @"<Model>
+	    <Command name=""""></Command>
+	    </Model>";	
+
+	System.Xml.Linq.XDocument XmlDoc = System.Xml.Linq.XDocument.Parse(SampleInputFileContent);
+	
+	var Methods = from c in XmlDoc.Descendants("Method") 
+	   			 select new {Name = c.Attribute("name").Value, Table = c}; 
+		 #>
+		 using System;
+using System.Collections.Generic;
+using Rhino;
+using Rhino.Commands;
+using Rhino.Geometry;
+using Rhino.Input;
+using Rhino.Input.Custom;
+
+
+namespace PoC
+{
+	<# getWeatherDataCodeGen(SampleInputFileContent); #>  
+	}
+
+
+<#+  
+  // Insert any template procedures here
+  void getWeatherDataCodeGen(string Input) {
+	string Password = "74a566aa-a27b-4a07-bee4-d94216cf4bb4";
+	string Resource = "PoC.Combined.rvbx";
+	System.Xml.Linq.XDocument XmlDoc = System.Xml.Linq.XDocument.Parse(Input);
+	
+	
+	var Commands = from c in XmlDoc.Descendants("Command") 
+	   			 select new {Name = c.Attribute("name").Value, Table = c}; 
+
+    foreach (var aCommand in Commands) {
+		Guid guid = Guid.NewGuid();
+	#>
+
+	[System.Runtime.InteropServices.Guid("<#=guid.ToString()#>")]
+    public class <#= aCommand.Name #> : RhinoScriptCommand
+    {
+        public override string ResourceName
+        {
+			//als alle code in 1 rvbx bestand staat is de ResourceName voor elke
+			//functie gelijk
+            get { return "<#=Resource#>"; }
+        }
+
+        public override string Password
+        {
+			//als alle code in 1 rvbx bestand staat is het wachtwoord voor elke
+			//functie gelijk
+            get { return "<#=Password#>"; }
+        }
+
+        public override string EnglishName
+        {
+            get { return "<#= aCommand.Name #>"; }
+        }
+    }
+	<#+
+	}
+	
+  }
+#>
