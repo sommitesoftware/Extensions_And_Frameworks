@@ -24,7 +24,6 @@ public class Relation<T>
     {
         public T Parent { get; set; }
         public object Child { get; set; }
-
         public string ParentForeignKey { get; set; }
         public string ChildPrimaryKey { get; set; }
 
